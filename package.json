@@ -1,6 +1,6 @@
 {
   "name": "simple-gitpkg-subdir",
-  "description": "A lightweight proxy service that lets you **install a subfolder from a GitHub repository** directly as an npm package. Perfect for monorepos.",
+  "description": "A lightweight proxy service that lets you install a subfolder from a GitHub repository directly as an npm package. Perfect for monorepos.",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
   "author": "tranvux",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "node-fetch": "^2.7.0",
     "tar": "^7.5.1"

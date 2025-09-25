@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const fetch = require("node-fetch"); // v2 (require style). If using Node 18+ native fetch you can replace it.
 const tar = require("tar");
