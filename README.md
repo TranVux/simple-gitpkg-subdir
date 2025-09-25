@@ -15,13 +15,13 @@ https://simple-gitpkg-subdir.vercel.app
 ### Install a package from a subfolder
 
 ```bash
-npm install https://simple-gitpkg-subdir.vercel.app/:user/:repo/:path?ref={commit|tag|branch}&token={github_token}
+npm install 'https://simple-gitpkg-subdir.vercel.app/:user/:repo/:path?ref={commit|tag|branch}&token={github_token}'
 ```
 
 🔹 Example:
 
 ```bash
-npm install https://simple-gitpkg-subdir.vercel.app/devmobileaffina/react-native-affina-common/packages/constants?ref=62aa22dee2e518cb25123d71215274308d8bf979&token=ghp_xxx123
+npm install 'https://simple-gitpkg-subdir.vercel.app/devmobileaffina/react-native-affina-common/packages/constants?ref=62aa22dee2e518cb25123d71215274308d8bf979&token=ghp_xxx123'
 ```
 
 * `:user` → GitHub user or org
