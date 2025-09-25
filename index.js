@@ -1,5 +1,5 @@
 const express = require("express");
-const fetch = require("node-fetch"); // v2 (require style). If using Node 18+ native fetch you can replace it.
+const fetch = require("node-fetch");
 const tar = require("tar");
 const fs = require("fs");
 const fsp = fs.promises;
@@ -18,7 +18,7 @@ async function downloadToFile(stream, destPath) {
 // Example URL: http://localhost:3000/devmobileaffina/react-native-affina-common/packages/constants?ref=62aa22dee2e518cb25123d71215274308d8bf979&token={token}
 app.get("/:user/:repo/*subdir", async (req, res) => {
     const {user, repo, subdir} = req.params;
-    // const subdir = req.params[0]; // catch-all part, e.g. "packages/constants"
+
     const commitish = req.query?.ref || "main";
     const token = req.query?.token || "";
 
@@ -121,5 +121,5 @@ app.get("/:user/:repo/*subdir", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`✅ Gitpkg self-host running at http://localhost:${PORT}`);
+    console.log("Simple GitPkg Let's gooo ✅");
 });
