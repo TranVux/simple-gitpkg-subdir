@@ -29,7 +29,6 @@ app.get("/:user/:repo/*subdir", async (req, res) => {
 
     try {
         const tarballUrl = `https://api.github.com/repos/${user}/${repo}/tarball/${commitish}`;
-        console.log("⬇️ Fetching tarball:", tarballUrl);
 
         const ghRes = await fetch(tarballUrl, {
             headers: {
