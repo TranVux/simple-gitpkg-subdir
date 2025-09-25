@@ -10,6 +10,10 @@ const {pipeline} = require("stream/promises");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+function extractToken(rawToken) {
+    return rawToken ? rawToken.split(" ")?.[1] ?? null : null
+}
+
 async function downloadToFile(stream, destPath) {
     const writeStream = fs.createWriteStream(destPath);
     await pipeline(stream, writeStream);
@@ -20,7 +24,7 @@ app.get("/:user/:repo/*subdir", async (req, res) => {
     const {user, repo, subdir} = req.params;
 
     const commitish = req.query?.ref || "main";
-    const token = req.query?.token || "";
+    const token = extractToken(req?.headers['authorization']) || extractToken(req?.headers['Authorization']) || req.query?.token || "";
 
     // make temp workspace
     const tmpBase = await fsp.mkdtemp(path.join(os.tmpdir(), "gitpkg-"));
